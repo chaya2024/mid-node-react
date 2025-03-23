@@ -1,4 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { PrimeReactProvider } from 'primereact/api';
+import { PrimeIcons } from 'primereact/api';
+import 'primeicons/primeicons.css';
+import { Button } from "primereact/button";     
 import './App.css';
 import Layout from './common/Layout';
 import TodoList from "./TodoComp/TodosList.js";
@@ -8,25 +12,26 @@ import Users from "./UserComp/Users.js";
 
 function App() {
   return (
+    <PrimeReactProvider>
     <div className="App">
       <Router>
         <Routes>
           <Route path='/' element={<Layout />} />
           <Route index element={
-            <div>
-              <h1>home page</h1>
+            <div className="my-app">
+              home page
               <div>
                 <Link to="/TodoComp">
-                  <button>Todos</button>
+                <Button label="Todos" icon="pi pi-list-check" iconPos="right" style={{ backgroundColor: 'purple'}} className="Categories" />
                 </Link>
                 <Link to="/PhotoComp">
-                  <button>Photos</button>
+                  <Button label="Photos" icon="pi pi-images" iconPos="right" style={{ backgroundColor: 'pink'}} className="Categories" />
                 </Link>
                 <Link to="/PostComp">
-                  <button>Posts</button>
+                <Button label="Posts" icon="pi pi-pen-to-square" iconPos="right" style={{ backgroundColor: 'green'}} className="Categories" />
                 </Link>
                 <Link to="/UserComp">
-                  <button>Users</button>
+                <Button label="Users" iconPos="right" icon="pi pi-users" style={{ backgroundColor: 'blue'}} className="Categories" />
                 </Link>
               </div>
             </div>
@@ -38,6 +43,7 @@ function App() {
         </Routes>
       </Router>
     </div>
+    </PrimeReactProvider>
   );
 }
 

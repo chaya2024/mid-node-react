@@ -2,6 +2,18 @@ import { useEffect, useState } from "react";
 import Axios from "axios"
 import AddUser from "./AddUser"
 import UpdateUser from "./UpdateUser";
+const DeleteUser= ({user, onDelete})=>{
+    const handleDelete= async()=>{
+        const{data:responseData}= await Axios.delete("http://localhost:1234/Users/", {
+            data:{id:user._id}
+        })
+        console.log(responseData)
+        if (onDelete) onDelete()
+    }
+    return<div>
+        <button onClick={handleDelete}>delete</button>
+    </div>
+}
 const Users=()=>{
     const [users, setUsers]= useState([])
     const fetchUsers= async()=>{
@@ -19,6 +31,7 @@ const Users=()=>{
             return <div>
                 {user.name}
                 <UpdateUser onUpdate={fetchUsers} Id={user._id} />
+                <DeleteUser onDelete={fetchUsers} user={user}/>
                 </div>
         })}
     </div>

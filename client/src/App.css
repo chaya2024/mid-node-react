@@ -1,10 +1,18 @@
 .App {
   text-align: center;
 }
+.my-app{
+  background-color: #61dafb;
+  font-size: 3rem;
+  color:rgb(248, 248, 248);
+  font-style: oblique;
+}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,6 +34,15 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.Categories{
+  color: white;
+  text-align: center;
+  height: 100vh;
+  width: 25%;
+  font-style: oblique;
+  font-size: 5.5rem;
 }
 
 @keyframes App-logo-spin {

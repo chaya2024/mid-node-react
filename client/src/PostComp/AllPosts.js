@@ -1,7 +1,20 @@
+import '../model.css';
 import { useEffect, useState } from "react";
 import Axios from "axios"
 import AddPost from "./AddPost"
 import UpdatePost from "./UpdatePost";
+const DeletePost= ({post, onDelete})=>{
+    const handleDelete= async()=>{
+        const{data:responseData}= await Axios.delete("http://localhost:1234/Posts/", {
+            data:{id:post._id}
+        })
+        console.log(responseData)
+        if (onDelete) onDelete()
+    }
+    return<div>
+        <button onClick={handleDelete}>delete</button>
+    </div>
+}
 const AllPosts=()=>{
     const [posts, setPosts]= useState([])
     const fetchPosts= async()=>{
@@ -19,6 +32,7 @@ const AllPosts=()=>{
             return <div>
                 {post.title}
                 <UpdatePost onUpdate={fetchPosts} Id={post._id} />
+                <DeletePost onDelete={fetchPosts} post={post}/>
                 </div>
         })}
     </div>
