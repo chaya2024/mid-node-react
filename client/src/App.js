@@ -22,16 +22,16 @@ function App() {
               home page
               <div>
                 <Link to="/TodoComp">
-                <Button label="Todos" icon="pi pi-list-check" iconPos="right" style={{ backgroundColor: 'purple'}} className="Categories" />
+                <Button label="Todos" icon="pi pi-list-check" ho iconPos="right" style={{ backgroundColor: '#CC99FF'}}/>
                 </Link>
                 <Link to="/PhotoComp">
-                  <Button label="Photos" icon="pi pi-images" iconPos="right" style={{ backgroundColor: 'pink'}} className="Categories" />
+                  <Button label="Photos" icon="pi pi-images" iconPos="right" style={{ backgroundColor: '#FFCCCC'}} />
                 </Link>
                 <Link to="/PostComp">
-                <Button label="Posts" icon="pi pi-pen-to-square" iconPos="right" style={{ backgroundColor: 'green'}} className="Categories" />
+                <Button label="Posts" icon="pi pi-pen-to-square" iconPos="right" style={{ backgroundColor: '#66FF66'}}/>
                 </Link>
                 <Link to="/UserComp">
-                <Button label="Users" iconPos="right" icon="pi pi-users" style={{ backgroundColor: 'blue'}} className="Categories" />
+                <Button label="Users" iconPos="right" icon="pi pi-users" style={{ backgroundColor: '#FFFFCC'}}/>
                 </Link>
               </div>
             </div>

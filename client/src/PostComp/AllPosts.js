@@ -1,5 +1,6 @@
-import '../model.css';
 import { useEffect, useState } from "react";
+//import '../model.css'
+import { Button } from "primereact/button";
 import Axios from "axios"
 import AddPost from "./AddPost"
 import UpdatePost from "./UpdatePost";
@@ -12,7 +13,7 @@ const DeletePost= ({post, onDelete})=>{
         if (onDelete) onDelete()
     }
     return<div>
-        <button onClick={handleDelete}>delete</button>
+        <Button onClick={handleDelete} >delete</Button>
     </div>
 }
 const AllPosts=()=>{
